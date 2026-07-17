@@ -103,10 +103,9 @@ export function SiteNav() {
 
           <div className="relative" ref={searchRef}>
             <button
-              type="button"
               onClick={openSearch}
               aria-label="Search"
-              className="w-10 h-10 flex items-center justify-center rounded-full transition-colors touch-manipulation"
+              className="w-8 h-8 flex items-center justify-center rounded-full transition-colors"
               style={{ color: "var(--ink)" }}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -166,12 +165,11 @@ export function SiteNav() {
             )}
           </div>
 
-            <button
-              type="button"
-              className="sm:hidden flex flex-col items-center justify-center gap-1.5 w-10 h-10 touch-manipulation"
-              aria-label="Toggle menu"
-              onClick={() => setOpen((v) => !v)}
-            > 
+          <button
+            className="sm:hidden flex flex-col gap-1.5 w-6"
+            aria-label="Toggle menu"
+            onClick={() => setOpen((v) => !v)}
+          >
             <span className="h-px w-full" style={{ background: "var(--ink)" }} />
             <span className="h-px w-full" style={{ background: "var(--ink)" }} />
             <span className="h-px w-full" style={{ background: "var(--ink)" }} />
