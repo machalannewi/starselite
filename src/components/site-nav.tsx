@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -73,12 +74,12 @@ export function SiteNav() {
 
   return (
     <header
-      className="border-b sticky top-0 z-30 backdrop-blur"
+      className="border-b sticky top-0 z-[9999] backdrop-blur"
       style={{ borderColor: "var(--line)", background: "rgba(238,240,234,0.85)" }}
     >
       <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="font-display text-lg font-semibold" style={{ color: "var(--ink)" }}>
-          STARSELITE
+          <Image alt="Starselite" src="/assets/starselite-logo.png" width={150} height={150} />
         </Link>
 
         <div className="flex items-center gap-6">

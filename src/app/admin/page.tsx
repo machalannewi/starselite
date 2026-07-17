@@ -5,9 +5,9 @@ import AdminDashboard from "./AdminDashboard";
 export default async function AdminPage() {
   const access = await checkAdminAccess();
 
-  if (!access.authorized && access.reason === "unauthenticated") {
-    redirect("/sign-in");
-  }
+if (!access.authorized && access.reason === "unauthenticated") {
+  redirect("/sign-in?redirect_url=/admin");
+}
 
   if (!access.authorized) {
     return (

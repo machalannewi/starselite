@@ -50,7 +50,7 @@ export default async function HomePage() {
             STARSELITE
           </p>
           <h1
-            className="font-display text-5xl font-semibold mt-3 max-w-2xl leading-[1.05]"
+            className="font-display text-4xl md:text-5xl font-semibold mt-3 max-w-2xl leading-[1.05]"
             style={{ color: "var(--paper)" }}
           >
             Your ultimate destination for all things glamorous and star-studded!
