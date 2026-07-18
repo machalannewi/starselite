@@ -179,7 +179,7 @@ export function SiteNav() {
 
           <button
             type="button"
-            className="sm:hidden flex flex-col items-center justify-center gap-1.5 w-10 h-10 touch-manipulation"
+            className="sm:hidden flex flex-col items-center justify-center gap-1.5 w-8 h-8 touch-manipulation"
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
           >
