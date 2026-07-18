@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Fraunces, Libre_Franklin, JetBrains_Mono } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "@/components/ui/sonner";
+import { LiveChat } from "@/components/live-chat";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -40,6 +41,7 @@ export default function RootLayout({
         <body className="min-h-full flex flex-col">
           {children}
           <Toaster position="bottom-center"/>
+          <LiveChat />
         </body>
       </html>
     </ClerkProvider>

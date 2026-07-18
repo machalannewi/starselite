@@ -128,6 +128,7 @@ export function BookingForm({ figureName, figureSlug }: BookingFormProps) {
           <div className="grid sm:grid-cols-2 gap-4">
             <Input
               type="date"
+              placeholder="Preferred Date"
               value={form.eventDate}
               onChange={(e) => update("eventDate", e.target.value)}
             />
