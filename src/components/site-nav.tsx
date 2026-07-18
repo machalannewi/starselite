@@ -125,11 +125,11 @@ export function SiteNav() {
               </svg>
             </button>
 
-            {searchOpen && (
-              <div
-                className="absolute right-0 mt-3 w-80 rounded-sm border shadow-lg overflow-hidden"
-                style={{ borderColor: "var(--line)", background: "var(--paper)" }}
-              >
+              {searchOpen && (
+                <div
+                  className="fixed left-4 right-4 top-16 z-50 rounded-sm border shadow-lg overflow-hidden sm:absolute sm:left-auto sm:right-0 sm:top-auto sm:mt-3 sm:w-80"
+                  style={{ borderColor: "var(--line)", background: "var(--paper)" }}
+                >
                 <input
                   ref={inputRef}
                   value={query}
