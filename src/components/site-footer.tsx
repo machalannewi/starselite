@@ -45,11 +45,11 @@ export function SiteFooter() {
             Contact
           </Link>
           <Link
-            href="mailto:support@starselite.com"
+            href="mailto:support@stars-elite.com"
             className="font-mono-meta text-xs uppercase tracking-widest"
             style={{ color: "var(--gold)" }}
           >
-            support@starselite.com
+            support@stars-elite.com
           </Link>
         </div>
       </div>

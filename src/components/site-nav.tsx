@@ -73,11 +73,20 @@ export function SiteNav() {
   }
 
   return (
-    <header
-      className="border-b sticky top-0 z-[9999] backdrop-blur"
-      style={{ borderColor: "var(--line)", background: "rgba(238,240,234,0.85)" }}
-    >
-      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+    <header className="sticky top-0 z-[9999] border-b" style={{ borderColor: "var(--line)" }}>
+      {/* blurred background layer, isolated from interactive content
+          (Safari on iOS can swallow touch hit-testing on buttons that
+          share a stacking context with backdrop-filter) */}
+      <div
+        className="absolute inset-0 -z-10"
+        style={{
+          background: "rgba(238,240,234,0.85)",
+          backdropFilter: "blur(8px)",
+          WebkitBackdropFilter: "blur(8px)",
+        }}
+      />
+
+      <div className="relative z-10 max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="font-display text-lg font-semibold" style={{ color: "var(--ink)" }}>
           <Image alt="Starselite" src="/assets/starselite-logo.png" width={150} height={150} />
         </Link>
@@ -104,9 +113,10 @@ export function SiteNav() {
 
           <div className="relative" ref={searchRef}>
             <button
+              type="button"
               onClick={openSearch}
               aria-label="Search"
-              className="w-8 h-8 flex items-center justify-center rounded-full transition-colors"
+              className="w-10 h-10 flex items-center justify-center rounded-full transition-colors touch-manipulation"
               style={{ color: "var(--ink)" }}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -142,9 +152,10 @@ export function SiteNav() {
                     ) : (
                       results.map((r) => (
                         <button
+                          type="button"
                           key={r.slug}
                           onClick={() => goTo(r.slug)}
-                          className="w-full flex items-center gap-3 px-4 py-2.5 text-left hover:bg-black/5 transition-colors"
+                          className="w-full flex items-center gap-3 px-4 py-2.5 text-left hover:bg-black/5 transition-colors touch-manipulation"
                         >
                           <div
                             className="w-8 h-8 rounded-full overflow-hidden flex-shrink-0"
@@ -167,7 +178,8 @@ export function SiteNav() {
           </div>
 
           <button
-            className="sm:hidden flex flex-col gap-1.5 w-6"
+            type="button"
+            className="sm:hidden flex flex-col items-center justify-center gap-1.5 w-10 h-10 touch-manipulation"
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
           >
@@ -179,7 +191,10 @@ export function SiteNav() {
       </div>
 
       {open && (
-        <nav className="sm:hidden flex flex-col px-6 pb-4 gap-3" style={{ background: "var(--paper)" }}>
+        <nav
+          className="sm:hidden relative z-10 flex flex-col px-6 pb-4 gap-3"
+          style={{ background: "var(--paper)" }}
+        >
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}

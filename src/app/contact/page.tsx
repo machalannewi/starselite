@@ -37,7 +37,7 @@ export default function ContactPage() {
           className="inline-block px-6 py-3 rounded-sm font-mono-meta text-xs tracking-widest uppercase"
           style={{ background: "var(--ink)", color: "var(--paper)" }}
         >
-          support@starselite.com
+          support@stars-elite.com
         </a>
       </main>
 
@@ -73,8 +73,8 @@ export default function ContactPage() {
                 <div>
                   <strong>Email</strong>
                   <p>
-                    <a href="mailto:support@starselite.com">
-                      support@starselite.com
+                    <a href="mailto:support@stars-elite.com">
+                      support@stars-elite.com
                     </a>
                   </p>
                 </div>

@@ -200,8 +200,8 @@ export default function AboutPage() {
                   <div>
                     <strong>Email</strong>
                     <p>
-                      <a href="mailto:support@starselite.com">
-                        support@starselite.com
+                      <a href="mailto:support@stars-elite.com">
+                        support@stars-elite.com
                       </a>
                     </p>
                   </div>
